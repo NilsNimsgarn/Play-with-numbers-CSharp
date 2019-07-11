@@ -1,0 +1,31 @@
+using System;
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string [] line = Console.ReadLine().Split(' ');// 0=lang 1=tests
+            string [] array = Console.ReadLine().Split(' ');
+            int tests = Convert.ToInt32(line[1]);
+            
+            for (int x = 0; x < tests; x++)
+            {
+                string test = Console.ReadLine();
+                int z1 = Convert.ToInt32(test.Substring(0,1));
+                int z2 = Convert.ToInt32(test.Substring(1,2));
+                double erg = 0;
+                int teiler = 0;
+                
+                for (int y = z1 -1; y < z2; y++)                
+                {
+                    erg += Convert.ToInt32(array[y]);
+                    teiler += 1;
+                }
+                
+            erg = Math.Floor(erg / teiler);
+            Console.WriteLine(erg);
+            }
+        }
+    }
+}
